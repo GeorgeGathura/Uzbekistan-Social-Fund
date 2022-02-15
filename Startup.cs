@@ -30,7 +30,7 @@ namespace Uzbekistan_Social_Fund
             {
                 options.UseNpgsql(Configuration.GetConnectionString("default"));
             });
-            services.AddIdentity<IdentityUser,IdentityRole>().AddEntityFrameworkStores<SocialFundDbContext>();
+            services.AddIdentity<ApplicationUser,IdentityRole>().AddEntityFrameworkStores<SocialFundDbContext>();
             services.AddControllersWithViews();
         }
 

@@ -34,6 +34,8 @@ namespace Uzbekistan_Social_Fund.Models
         [Required]
         public string PINFLNumber { get; set; }
 
+        [Required]
+        [Display(Name ="Ward")]
         public int WardId { get; set; }
 
         [Display(Name ="Postal Address")]

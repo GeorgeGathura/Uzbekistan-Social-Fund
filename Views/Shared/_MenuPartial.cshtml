@@ -1,0 +1,51 @@
+﻿@inject Microsoft.AspNetCore.Identity.SignInManager<Uzbekistan_Social_Fund.Models.ApplicationUser> signInManager
+<ul class="navbar-nav flex-grow-1">
+
+@if (signInManager.IsSignedIn(User))
+{
+        
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Applicants" asp-action="Index">Applicants</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="HouseMembers" asp-action="Index">House Members</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Counties" asp-action="Index">Counties</a>
+    </li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="SubCounties" asp-action="Index">Sub-Counties</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Wards" asp-action="Index">Wards</a>
+    </li>
+
+
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Application" asp-action="Logout">Log Out</a>
+    </li>
+
+}
+else
+{
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Applicants" asp-action="Create">Add Applicant</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Application" asp-action="Login">Login</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Application" asp-action="Register">Register</a>
+    </li>
+    
+
+}
+</ul>

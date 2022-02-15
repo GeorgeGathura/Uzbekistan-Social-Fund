@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Uzbekistan_Social_Fund.Models.MemberEducation>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LangugeProfiency)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WriteProfiency)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SchoolAttendance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SchoolLevel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HasAttendedSchool)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HighestSchoolLevel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HouseMember)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LangugeProfiency)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WriteProfiency)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SchoolAttendance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SchoolLevel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasAttendedSchool)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HighestSchoolLevel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HouseMember.FullName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

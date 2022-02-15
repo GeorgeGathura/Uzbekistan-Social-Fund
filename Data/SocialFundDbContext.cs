@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Uzbekistan_Social_Fund.Models;
+using Uzbekistan_Social_Fund.Models.ViewModels;
 
 namespace Uzbekistan_Social_Fund.Data
 {
-    public class SocialFundDbContext : IdentityDbContext
+    public class SocialFundDbContext : IdentityDbContext<ApplicationUser>
     {
         public SocialFundDbContext(DbContextOptions<SocialFundDbContext> options):base(options)
         {
@@ -23,6 +24,8 @@ namespace Uzbekistan_Social_Fund.Data
         public DbSet<SubCounty> SubCounties { get; set; }
 
         public DbSet<Ward> Wards { get; set; }
+
+        //public DbSet<Uzbekistan_Social_Fund.Models.ViewModels.RegisterVM> RegisterVM { get; set; }
 
     }
 }
