@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Uzbekistan_Social_Fund.Data;
@@ -9,9 +10,10 @@ using Uzbekistan_Social_Fund.Data;
 namespace Uzbekistan_Social_Fund.Migrations
 {
     [DbContext(typeof(SocialFundDbContext))]
-    partial class SocialFundDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220215085648_AddApplicantsTable")]
+    partial class AddApplicantsTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -267,42 +269,6 @@ namespace Uzbekistan_Social_Fund.Migrations
                     b.ToTable("Applicants");
                 });
 
-            modelBuilder.Entity("Uzbekistan_Social_Fund.Models.HouseMember", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<string>("AppliantId")
-                        .HasColumnType("text");
-
-                    b.Property<int>("ApplicantId")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTime>("DateOfBirth")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<string>("FullName")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("IDNumber")
-                        .IsRequired()
-                        .HasColumnType("character varying(30)")
-                        .HasMaxLength(30);
-
-                    b.Property<string>("Relationship")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AppliantId");
-
-                    b.ToTable("HouseMembers");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -352,13 +318,6 @@ namespace Uzbekistan_Social_Fund.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Uzbekistan_Social_Fund.Models.HouseMember", b =>
-                {
-                    b.HasOne("Uzbekistan_Social_Fund.Models.Applicant", "Applicant")
-                        .WithMany()
-                        .HasForeignKey("AppliantId");
                 });
 #pragma warning restore 612, 618
         }
