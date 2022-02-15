@@ -27,7 +27,7 @@ namespace Uzbekistan_Social_Fund.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Applicants", x => x.EmailAddress);
+                    table.PrimaryKey("PK_Applicants", x => x.Id);
                 });
         }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using Uzbekistan_Social_Fund.Models;
 
 namespace Uzbekistan_Social_Fund.Controllers
 {
+    [Authorize]
     public class MemberEducationsController : Controller
     {
         private readonly SocialFundDbContext _context;

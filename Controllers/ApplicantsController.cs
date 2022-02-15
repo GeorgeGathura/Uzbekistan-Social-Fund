@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Uzbekistan_Social_Fund.Data;
 using Uzbekistan_Social_Fund.Models;
+using Uzbekistan_Social_Fund.Utilities;
 
 namespace Uzbekistan_Social_Fund.Controllers
 {
@@ -21,16 +22,14 @@ namespace Uzbekistan_Social_Fund.Controllers
         }
 
         // GET: Applicants
-        [Authorize(Roles="Admin")]
-        [Authorize(Roles = "DataEntry")]
-
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Applicants.ToListAsync());
         }
 
         // GET: Applicants/Details/5
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = RolesHelper.Admin)]
         public async Task<IActionResult> Details(string id)
         {
             if (id == null)
@@ -70,7 +69,15 @@ namespace Uzbekistan_Social_Fund.Controllers
             {
                 _context.Add(applicant);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                if (User.IsInRole(RolesHelper.Admin) || User.IsInRole(RolesHelper.DataEntry))
+                {
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                {
+                    return RedirectToAction("Login", "Application");
+                }
+               
             }
             return View(applicant);
         }

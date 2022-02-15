@@ -5,7 +5,7 @@ namespace Uzbekistan_Social_Fund.Utilities
 {
     public static class RolesHelper
     {
-        public const string Admin = "admin";
+        public const string Admin = "Admin";
         public const string DataEntry = "Data Entry";
 
         public static List<SelectListItem> GetRoles()

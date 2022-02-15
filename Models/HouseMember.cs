@@ -22,7 +22,7 @@ namespace Uzbekistan_Social_Fund.Models
         [Required]
         public string Relationship { get; set; }
         [Required]
-
+        [Display(Name ="Applicant")]
         public int ApplicantId { get; set; }
 
         [ForeignKey("AppliantId")]

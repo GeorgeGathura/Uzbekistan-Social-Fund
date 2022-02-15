@@ -11,10 +11,30 @@
     <Compile Remove="Migrations\20220215090719_AddHouseMemebersTable.Designer.cs" />
     <Compile Remove="Migrations\20220215090740_AddHouseMembersTable.cs" />
     <Compile Remove="Migrations\20220215090740_AddHouseMembersTable.Designer.cs" />
+    <Compile Remove="Migrations\20220215090907_AddHouseMembersTable.cs" />
+    <Compile Remove="Migrations\20220215090907_AddHouseMembersTable.Designer.cs" />
     <Compile Remove="Migrations\20220215091847_AddMemeberEducationTable.cs" />
     <Compile Remove="Migrations\20220215091847_AddMemeberEducationTable.Designer.cs" />
+    <Compile Remove="Migrations\20220215092200_AddMemeberEducationTable.cs" />
+    <Compile Remove="Migrations\20220215092200_AddMemeberEducationTable.Designer.cs" />
+    <Compile Remove="Migrations\20220215092900_AddFundApplicationTable.cs" />
+    <Compile Remove="Migrations\20220215092900_AddFundApplicationTable.Designer.cs" />
+    <Compile Remove="Migrations\20220215093125_AddCountyTable.cs" />
+    <Compile Remove="Migrations\20220215093125_AddCountyTable.Designer.cs" />
+    <Compile Remove="Migrations\20220215093536_AddSub-CountyTable.cs" />
+    <Compile Remove="Migrations\20220215093536_AddSub-CountyTable.Designer.cs" />
+    <Compile Remove="Migrations\20220215093955_AddWardsTable.cs" />
+    <Compile Remove="Migrations\20220215093955_AddWardsTable.Designer.cs" />
+    <Compile Remove="Migrations\20220215094231_UpdateLocationTablesAnnotations.cs" />
+    <Compile Remove="Migrations\20220215094231_UpdateLocationTablesAnnotations.Designer.cs" />
+    <Compile Remove="Migrations\20220215094620_UpdateIdentityTable.cs" />
+    <Compile Remove="Migrations\20220215094620_UpdateIdentityTable.Designer.cs" />
     <Compile Remove="Migrations\20220215112205_updateApplicantTable.cs" />
     <Compile Remove="Migrations\20220215112205_updateApplicantTable.Designer.cs" />
+    <Compile Remove="Migrations\20220215112950_updateApplicantTable.cs" />
+    <Compile Remove="Migrations\20220215112950_updateApplicantTable.Designer.cs" />
+    <Compile Remove="Migrations\20220215120635_updateHouseMemberTable.cs" />
+    <Compile Remove="Migrations\20220215120635_updateHouseMemberTable.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

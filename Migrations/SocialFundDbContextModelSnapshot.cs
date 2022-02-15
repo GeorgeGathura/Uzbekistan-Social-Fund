@@ -151,11 +151,17 @@ namespace Uzbekistan_Social_Fund.Migrations
 
             modelBuilder.Entity("Uzbekistan_Social_Fund.Models.Applicant", b =>
                 {
-                    b.Property<string>("EmailAddress")
-                        .HasColumnType("text");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<DateTime>("DateOfBirth")
                         .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("EmailAddress")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -165,9 +171,6 @@ namespace Uzbekistan_Social_Fund.Migrations
                     b.Property<string>("Gender")
                         .IsRequired()
                         .HasColumnType("text");
-
-                    b.Property<int>("Id")
-                        .HasColumnType("integer");
 
                     b.Property<bool>("IsMarried")
                         .HasColumnType("boolean");
@@ -198,7 +201,7 @@ namespace Uzbekistan_Social_Fund.Migrations
                     b.Property<int>("WardId")
                         .HasColumnType("integer");
 
-                    b.HasKey("EmailAddress");
+                    b.HasKey("Id");
 
                     b.ToTable("Applicants");
                 });
@@ -301,8 +304,8 @@ namespace Uzbekistan_Social_Fund.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<string>("AppliantId")
-                        .HasColumnType("text");
+                    b.Property<int?>("AppliantId")
+                        .HasColumnType("integer");
 
                     b.Property<int>("ApplicantId")
                         .HasColumnType("integer");
@@ -330,8 +333,8 @@ namespace Uzbekistan_Social_Fund.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<string>("AppliantId")
-                        .HasColumnType("text");
+                    b.Property<int?>("AppliantId")
+                        .HasColumnType("integer");
 
                     b.Property<int>("ApplicantId")
                         .HasColumnType("integer");

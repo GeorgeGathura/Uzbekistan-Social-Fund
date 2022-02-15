@@ -6,6 +6,7 @@ namespace Uzbekistan_Social_Fund.Models
 {
     public class Applicant
     {
+      
         public int Id { get; set; } 
         [Required]
         [StringLength(100, ErrorMessage ="Cannot Exceed 100 characters")]
@@ -48,7 +49,7 @@ namespace Uzbekistan_Social_Fund.Models
         public string TelephoneContacts { get; set; }   
 
         [Required]
-        [Key]
+      
         [Display(Name ="Email Address")]
         public string EmailAddress { get; set; }    
 

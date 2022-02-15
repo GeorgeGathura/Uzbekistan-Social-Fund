@@ -43,7 +43,11 @@ namespace Uzbekistan_Social_Fund.Controllers
             if (result.Succeeded)
             {
                 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Applicants");
+            }
+            else
+            {
+                ModelState.AddModelError("", "Invalid Login Attempt");
             }
   
            return View(login);
@@ -94,7 +98,8 @@ namespace Uzbekistan_Social_Fund.Controllers
                         var role = await _roleManager.FindByNameAsync(registerVM.Role);
                         await _userManager.AddToRoleAsync(user, role.Name);
                     }
-                    RedirectToAction("Index", "Home");
+
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {

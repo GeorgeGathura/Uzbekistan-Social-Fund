@@ -46,6 +46,11 @@ namespace Uzbekistan_Social_Fund.Controllers
         // GET: HouseMembers/Create
         public IActionResult Create()
         {
+            ViewBag.Applicants = _context.Applicants.Select(m => new SelectListItem
+            {
+                Text = m.FirstName+" "+m.LastName+" ("+m.PINFLNumber+")",
+                Value = m.Id.ToString(),
+            });
             return View();
         }
 
@@ -62,6 +67,11 @@ namespace Uzbekistan_Social_Fund.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewBag.Applicants = _context.Applicants.Select(m => new SelectListItem
+            {
+                Text = m.FirstName + m.LastName + "(" + m.PINFLNumber + ")",
+                Value = m.Id.ToString(),
+            });
             return View(houseMember);
         }
 
