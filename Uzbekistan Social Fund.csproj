@@ -11,6 +11,8 @@
     <Compile Remove="Migrations\20220215090719_AddHouseMemebersTable.Designer.cs" />
     <Compile Remove="Migrations\20220215090740_AddHouseMembersTable.cs" />
     <Compile Remove="Migrations\20220215090740_AddHouseMembersTable.Designer.cs" />
+    <Compile Remove="Migrations\20220215091847_AddMemeberEducationTable.cs" />
+    <Compile Remove="Migrations\20220215091847_AddMemeberEducationTable.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

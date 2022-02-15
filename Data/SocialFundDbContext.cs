@@ -12,7 +12,9 @@ namespace Uzbekistan_Social_Fund.Data
         }
 
         public DbSet<Applicant> Applicants { get; set; }
-        public DbSet<HouseMember> HouseMembers { get; set; }    
+        public DbSet<HouseMember> HouseMembers { get; set; }  
+        
+        public DbSet<MemberEducation> MemberEducations { get; set;}
 
     }
 }
