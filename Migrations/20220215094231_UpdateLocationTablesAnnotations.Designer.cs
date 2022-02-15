@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Uzbekistan_Social_Fund.Data;
@@ -9,9 +10,10 @@ using Uzbekistan_Social_Fund.Data;
 namespace Uzbekistan_Social_Fund.Migrations
 {
     [DbContext(typeof(SocialFundDbContext))]
-    partial class SocialFundDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220215094231_UpdateLocationTablesAnnotations")]
+    partial class UpdateLocationTablesAnnotations
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Uzbekistan_Social_Fund.Data;
@@ -9,9 +10,10 @@ using Uzbekistan_Social_Fund.Data;
 namespace Uzbekistan_Social_Fund.Migrations
 {
     [DbContext(typeof(SocialFundDbContext))]
-    partial class SocialFundDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220215093125_AddCountyTable")]
+    partial class AddCountyTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -276,8 +278,7 @@ namespace Uzbekistan_Social_Fund.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("character varying(70)")
-                        .HasMaxLength(70);
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -384,50 +385,6 @@ namespace Uzbekistan_Social_Fund.Migrations
                     b.ToTable("MemberEducations");
                 });
 
-            modelBuilder.Entity("Uzbekistan_Social_Fund.Models.SubCounty", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<int>("CountyId")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("character varying(70)")
-                        .HasMaxLength(70);
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CountyId");
-
-                    b.ToTable("SubCounties");
-                });
-
-            modelBuilder.Entity("Uzbekistan_Social_Fund.Models.Ward", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("character varying(70)")
-                        .HasMaxLength(70);
-
-                    b.Property<int>("SubCountyId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("SubCountyId");
-
-                    b.ToTable("Wards");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -498,24 +455,6 @@ namespace Uzbekistan_Social_Fund.Migrations
                     b.HasOne("Uzbekistan_Social_Fund.Models.HouseMember", "HouseMember")
                         .WithMany()
                         .HasForeignKey("HouseMemberId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Uzbekistan_Social_Fund.Models.SubCounty", b =>
-                {
-                    b.HasOne("Uzbekistan_Social_Fund.Models.County", "County")
-                        .WithMany()
-                        .HasForeignKey("CountyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Uzbekistan_Social_Fund.Models.Ward", b =>
-                {
-                    b.HasOne("Uzbekistan_Social_Fund.Models.SubCounty", "SubCounty")
-                        .WithMany()
-                        .HasForeignKey("SubCountyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

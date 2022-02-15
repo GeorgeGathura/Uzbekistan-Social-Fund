@@ -16,5 +16,13 @@ namespace Uzbekistan_Social_Fund.Data
         
         public DbSet<MemberEducation> MemberEducations { get; set;}
 
+        public DbSet<FundApplication> FundApplication { get; set; }
+
+        public DbSet<County> Counties { get; set; }
+
+        public DbSet<SubCounty> SubCounties { get; set; }
+
+        public DbSet<Ward> Wards { get; set; }
+
     }
 }
